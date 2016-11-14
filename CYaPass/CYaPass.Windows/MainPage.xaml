@@ -17,7 +17,7 @@
             <ColumnDefinition Width="375"/>
             <ColumnDefinition Width="350*"/>
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.Column="0"  Grid.Row="0" Margin="10,10,10,1" MinWidth="375">
+        <StackPanel Grid.Column="0"  Grid.Row="0" Margin="10,0,10,1" MinWidth="375" Height="328" VerticalAlignment="Bottom">
             <TextBlock  FontSize="16" HorizontalAlignment="Center">1. Select (or add) a Site / Key</TextBlock>
             <ListView BorderThickness="2" BorderBrush="Aquamarine"  
                       x:Name="SiteListBox" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="233" 
@@ -81,8 +81,8 @@
 
             </Grid>
         </StackPanel>
-        <StackPanel Grid.Column="1" Grid.Row="0" Margin="0,0,408,0">
-            <TextBlock FontSize="16" HorizontalAlignment="Left" Margin="231,0,230,0">
+        <StackPanel Grid.Column="1" Grid.Row="0" Margin="0,0,0,0">
+            <TextBlock FontSize="16" HorizontalAlignment="Left" Margin="40,10,230,0">
                 <Run Text="2. Draw a pattern"/>
             </TextBlock>
             <Canvas HorizontalAlignment="Left" x:Name="MainCanvas" 
