@@ -10,35 +10,35 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="320"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="339"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="375"/>
+            <ColumnDefinition Width="350*"/>
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.Column="0"  Grid.Row="0">
+        <StackPanel Grid.Column="0"  Grid.Row="0" Margin="10,10,10,1" MinWidth="375">
             <TextBlock  FontSize="16" HorizontalAlignment="Center">1. Select (or add) a Site / Key</TextBlock>
             <ListView BorderThickness="2" BorderBrush="Aquamarine"  
                       x:Name="SiteListBox" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="233" 
-                      Margin="10,10,10,0"  Width="Auto" SelectionChanged="SiteListBox_SelectionChanged">
+                      Margin="10,10,20,0"  Width="Auto" SelectionChanged="SiteListBox_SelectionChanged">
                 <ListView.ItemContainerStyle>
                     <Style TargetType="ListViewItem">
-                        <Setter Property="Padding" Value="5,0,0,0" />
+                        <Setter Property="Padding" Value="2,0,0,0" />
                     </Style>
                 </ListView.ItemContainerStyle>
-                <ListViewItem Content="Item 2"/>
             </ListView>
 
             <StackPanel Margin="10,5,10,15" Orientation="Horizontal" Grid.Column="0" VariableSizedWrapGrid.RowSpan="0">
-                <Button x:Name="DeleteSiteButton" Content="Delete Site" HorizontalAlignment="Left"
+                <Button x:Name="DeleteSiteButton" Content="Delete" HorizontalAlignment="Left"
                          VerticalAlignment="Top" Click="DeleteSiteButton_Click"/>
-                <Button x:Name="AddSiteButton" Content="Add Site" HorizontalAlignment="Right"
-                     Margin="3,0,0,0" VerticalAlignment="Top" Click="AddSiteButton_Click"/>
+                <TextBox x:Name="siteKeyTextBox"  TextWrapping="NoWrap" Text="" Width="193"/>
+                <Button x:Name="AddSiteButton" Content="Add" HorizontalAlignment="Right"
+                     Margin="3,0,0,0" VerticalAlignment="Top" Click="AddSiteButton_Click" RenderTransformOrigin="2.011,0.684"/>
             </StackPanel>
         </StackPanel>
-        <TextBox x:Name="passwordTextBox" HorizontalAlignment="Left" Margin="7,150,0,0" Grid.Row="1" Grid.ColumnSpan="2"
-                 TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="560"/>
+        <TextBox x:Name="passwordTextBox" HorizontalAlignment="Left" Margin="7,148,0,0" Grid.Row="1"
+                 TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="313" Height="91"/>
         <StackPanel HorizontalAlignment="Left" Height="128" Margin="10,20,0,0" Grid.Column="0" Grid.Row="1"
                     VerticalAlignment="Top" Width="285">
             <Grid Margin="0,0,-11,0">
@@ -78,11 +78,13 @@
                       FontFamily="Marlett" Content="u" Padding="-3" FontSize="12"
                       VerticalAlignment="Bottom" Click="NUDButtonDown_Click"></RepeatButton>
                 </Grid>
-                
+
             </Grid>
         </StackPanel>
-        <StackPanel Grid.Column="1" Grid.Row="0">
-            <TextBlock Grid.Column="1" Grid.Row="0" FontSize="16" HorizontalAlignment="Center">2. Draw a pattern</TextBlock>
+        <StackPanel Grid.Column="1" Grid.Row="0" Margin="0,0,408,0">
+            <TextBlock FontSize="16" HorizontalAlignment="Left" Margin="231,0,230,0">
+                <Run Text="2. Draw a pattern"/>
+            </TextBlock>
             <Canvas HorizontalAlignment="Left" x:Name="MainCanvas" 
                     Height="252" Width="252" Margin="10,10,0,0" VerticalAlignment="Top" Background="AliceBlue" 
                     Tapped="MainCanvas_Tapped" PointerMoved="MainCanvas_PointerMoved"/>

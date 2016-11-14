@@ -309,24 +309,11 @@ namespace CYaPass
 
         private async void AddSiteButton_Click(object sender, RoutedEventArgs e)
         {
-            Windows.UI.Popups.MessageDialog md = new Windows.UI.Popups.MessageDialog("test");
-            //Windows.UI.Popups.MessageDialogOptions.
-            await md.ShowAsync();
-            var newKey = "computer";
-            allSites.Add(new CYaPass.SiteKey(newKey));
-            SiteListBox.Items.Add(new SiteKey(newKey));
-
-            //n.s
-           /* var dialog = new SiteKeyDialog();
-            
-            ContentDialogResult cdr = await dialog.ShowAsync();
-            if (cdr == ContentDialogResult.Primary)
-            {
-                String newKey = dialog.siteKey;
-                allSites.Add(new CYaPass.SiteKey(newKey));
-                SiteListBox.Items.Add(new SiteKey(newKey));
-                await allSites.Save();
-            } */
+            if (siteKeyTextBox.Text.Trim() == String.Empty) { return; }
+            allSites.Add(new CYaPass.SiteKey(siteKeyTextBox.Text.Trim()));
+            SiteListBox.Items.Add(new SiteKey(siteKeyTextBox.Text.Trim()));
+            await allSites.Save();
+            siteKeyTextBox.Text = String.Empty;
         }
 
         private async void DeleteSiteButton_Click(object sender, RoutedEventArgs e)
@@ -338,6 +325,7 @@ namespace CYaPass
                 SiteListBox.Items.Remove(SiteListBox.SelectedItem);
                 
                 await allSites.Save();
+                passwordTextBox.Text = String.Empty;
             }
             catch (Exception ex)
             {
