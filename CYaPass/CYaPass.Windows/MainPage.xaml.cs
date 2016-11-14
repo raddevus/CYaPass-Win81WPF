@@ -234,8 +234,9 @@ namespace CYaPass
             {
                 el.SetValue(Canvas.LeftProperty, (Double)us.allPoints[0].X - offset);
                 el.SetValue(Canvas.TopProperty, (Double)us.allPoints[0].Y - offset);
+                MainCanvas.Children.Add(el);
             }
-            MainCanvas.Children.Add(el);
+           
         }
 
         void DrawUserShape()

@@ -38,7 +38,7 @@
             </StackPanel>
         </StackPanel>
         <TextBox x:Name="passwordTextBox" HorizontalAlignment="Left" Margin="7,148,0,0" Grid.Row="1"
-                 TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="313" Height="91"/>
+                 TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="288" Height="91"/>
         <StackPanel HorizontalAlignment="Left" Height="128" Margin="10,20,0,0" Grid.Column="0" Grid.Row="1"
                     VerticalAlignment="Top" Width="285">
             <Grid Margin="0,0,-11,0">
