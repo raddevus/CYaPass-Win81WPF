@@ -24,7 +24,7 @@
                       Margin="10,10,20,0"  Width="Auto" SelectionChanged="SiteListBox_SelectionChanged">
                 <ListView.ItemContainerStyle>
                     <Style TargetType="ListViewItem">
-                        <Setter Property="Padding" Value="2,0,0,0" />
+                        <Setter Property="Padding" Value="5,0,0,0" />
                     </Style>
                 </ListView.ItemContainerStyle>
             </ListView>
@@ -82,14 +82,14 @@
             </Grid>
         </StackPanel>
         <StackPanel Grid.Column="1" Grid.Row="0" Margin="0,0,0,0">
-            <TextBlock FontSize="16" HorizontalAlignment="Left" Margin="40,10,230,0">
+            <TextBlock FontSize="16" HorizontalAlignment="Left" Margin="40,10,0,0">
                 <Run Text="2. Draw a pattern"/>
             </TextBlock>
             <Canvas HorizontalAlignment="Left" x:Name="MainCanvas" 
                     Height="252" Width="252" Margin="10,10,0,0" VerticalAlignment="Top" Background="AliceBlue" 
                     Tapped="MainCanvas_Tapped" PointerMoved="MainCanvas_PointerMoved"/>
             <Button x:Name="ClearGridButton" Content="Clear"
-                    Margin="190,5,10,0" VerticalAlignment="Center" Click="ClearGridButton_Click" HorizontalAlignment="Left"/>
+                    Margin="190,5,0,0" VerticalAlignment="Center" Click="ClearGridButton_Click" HorizontalAlignment="Left"/>
         </StackPanel>
 
     </Grid>
